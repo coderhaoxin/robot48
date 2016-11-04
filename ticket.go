@@ -37,6 +37,7 @@ func queryTickets(team, date string) {
 
 	_, body, err := gorequest.
 		New().
+		Set("User-Agent", userAgent).
 		Post("http://www.snh48.com/ticketsinfo.php").
 		Query("act=choose").
 		Send("team=" + team + "&date=" + date).
